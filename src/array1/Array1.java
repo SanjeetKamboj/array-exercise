@@ -16,10 +16,16 @@ public class Array1 {
    
     public static void main(String[] args) {
         
+        System.out.println("Enter array. Use spacebar to seperate numbers:");
         Scanner scanInput = new Scanner(System.in);
         String input = scanInput.nextLine();
+        
+        System.out.println("Enter the  length of array: ");
+        String stringLengthInput = scanInput.nextLine();
+        int arrayLength = Integer.parseInt(stringLengthInput);
+        //System.out.println("Array length =" + arrayLength);
         String[] stringArray = input.split(" ");
-        int arrayLength = stringArray.length;
+       // int arrayLength = stringArray.length;
         int[] intArray = new int[stringArray.length]; 
         int y = arrayLength;
         for(int i = 0;i < stringArray.length;i++){
@@ -35,13 +41,12 @@ public class Array1 {
         System.out.println(" ");
         System.out.println("Reverse array");
         for(int r = arrayLength; r > 0;r-- ){
-            
-            y = y - 1;
-            printArray(intArray,arrayLength,y);
+            //System.out.println("R = " + r);
+            printArray(intArray,arrayLength,r-1);
             }
     }
 
-   
+    
     public static void printArray(int[] array, int length, int i){
         System.out.println((("Array"+(i+1) + " = " + array[i])));
     }
